@@ -44,6 +44,10 @@ namespace WebApplicationStart.Controllers
                 return "Ночь";
             }
         }
+        public string Task2(double id, double dopId)
+        {
+            return $"{id} + {dopId} = {id + dopId}";
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
