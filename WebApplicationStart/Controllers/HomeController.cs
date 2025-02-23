@@ -48,6 +48,25 @@ namespace WebApplicationStart.Controllers
         {
             return $"{id} + {dopId} = {id + dopId}";
         }
+        public string Task3(double id, double dopId, string esheDopId = "+")
+        {
+            if (esheDopId == "+")
+            {
+                return $"{id} + {dopId} = {id + dopId}";
+            }
+            else if (esheDopId == "-")
+            {
+                return $"{id} - {dopId} = {id - dopId}";
+            }
+            else if (esheDopId == "*")
+            {
+                return $"{id} * {dopId} = {id * dopId}";
+            }
+            else
+            {
+                return $"В качестве пятого сегмента необходимо передать одну из желаемых операций (+, -, *)";
+            }
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
