@@ -87,7 +87,7 @@ namespace WebApplicationStart.Controllers
                 {
                     return $"{a} / {b} = {a / b}";
                 }
-                return "Делить на 0 нельзя";
+                return "Делить на 0 нельзя ";
             }
             else
             {
