@@ -42,6 +42,26 @@ namespace WebApplicationStart.Controllers
             return a + b;
         }
 
+        public string Task3(double a, double b, char operation = '+')
+        {
+            switch (operation)
+            {
+                case '+': return (a + b).ToString();
+                case '-': return (a - b).ToString();
+                case '*': return (a * b).ToString();
+                case '/':
+                    if (b == 0)
+                    {
+                        return "Ошибка: деление на ноль невозможно.";
+                    }
+                    return (a / b).ToString();
+                default:
+                    return "Пока что я умею выполнять только эти операции: '+', '-', '*', '/'";
+            }
+            //http://localhost:5090/Home/task3?a=5&b=3&operation=+ для проверки, можно поиграться
+        }
+
+
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
