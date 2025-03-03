@@ -27,11 +27,11 @@ namespace WebApplicationStart.Controllers
         public string Task1()
         {
             var timeInHour = DateTime.Now.Hour;
-            if (timeInHour >= 0 && timeInHour < 6)
+            if (timeInHour < 6)
                 return "Доброй ночи";
-            if (timeInHour >= 6 && timeInHour < 12)
+            if (timeInHour < 12)
                 return "Доброе утро";
-            if (timeInHour >= 12 && timeInHour < 18)
+            if (timeInHour < 18)
                 return "Добрый день";
             return "Добрый вечер";
         }
