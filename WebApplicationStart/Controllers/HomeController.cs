@@ -31,18 +31,15 @@ namespace WebApplicationStart.Controllers
             {
                 return "Вечер";
             }
-            else if (hour >= 12)
+            if (hour >= 12)
             {
                 return "День";
             }
-            else if (hour >= 6)
+            if (hour >= 6)
             {
                 return "Утро";
             }
-            else
-            {
-                return "Ночь";
-            }
+            return "Ночь";
         }
         public string Task2(double id, double dopId)
         {
