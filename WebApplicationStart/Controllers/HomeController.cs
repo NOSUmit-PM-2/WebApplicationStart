@@ -47,21 +47,12 @@ namespace WebApplicationStart.Controllers
         }
         public string Task3(double id, double dopId, string esheDopId = "+")
         {
-            if (esheDopId == "+")
+            switch (esheDopId)
             {
-                return $"{id} + {dopId} = {id + dopId}";
-            }
-            else if (esheDopId == "-")
-            {
-                return $"{id} - {dopId} = {id - dopId}";
-            }
-            else if (esheDopId == "*")
-            {
-                return $"{id} * {dopId} = {id * dopId}";
-            }
-            else
-            {
-                return $"В качестве пятого сегмента необходимо передать одну из желаемых операций (+, -, *)";
+                case "+": return $"{id} + {dopId} = {id + dopId}";
+                case "-": return $"{id} - {dopId} = {id - dopId}";
+                case "*": return $"{id} * {dopId} = {id * dopId}";
+                default: return $"В качестве пятого сегмента необходимо передать одну из желаемых операций (+, -, *)";
             }
         }
         public string Task4(double a, double b, string c = "+")
