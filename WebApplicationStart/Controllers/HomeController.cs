@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Reflection.Metadata.Ecma335;
 using WebApplicationStart.Models;
 
 namespace WebApplicationStart.Controllers
@@ -57,29 +58,14 @@ namespace WebApplicationStart.Controllers
         }
         public string Task4(double a, double b, string c = "+")
         {
-            if (c == "+")
+            switch (c)
             {
-                return $"{a} + {b} = {a + b}";
-            }
-            else if (c == "-")
-            {
-                return $"{a} - {b} = {a - b}";
-            }
-            else if (c == "*")
-            {
-                return $"{a} * {b} = {a * b}";
-            }
-            else if (c == "/")
-            {
-                if (b > 0)
-                {
-                    return $"{a} / {b} = {a / b}";
-                }
-                return "Делить на 0 нельзя ";
-            }
-            else
-            {
-                return $"В качестве третьего параметра запроса необходимо передать одну из желаемых операций (+, -, *, /)";
+                case null:
+                case "+": return $"{a} + {b} = {a + b}";
+                case "-": return $"{a} - {b} = {a - b}";
+                case "*": return $"{a} * {b} = {a * b}";
+                case "/": if (b != 0) return $"{a} / {b} = {a / b}"; else return "Делить на 0 нельзя ";
+                default: return $"В качестве третьего параметра запроса необходимо передать одну из желаемых операций (+, -, *, /)";
             }
         }
 
