@@ -45,9 +45,9 @@ namespace WebApplicationStart.Controllers
 		{
 			switch (op)
 			{
-				case '+': return (a + b).ToString();
-				case '-': return (a - b).ToString();
-				case '*': return (a * b).ToString();
+				case '+': return $"{a} + {b} = {a + b}";
+				case '-': return $"{a} - {b} = {a - b}";
+				case '*': return $"{a} * {b} = {a * b}";
 				default:
 					return "Данная операция недоступна.\nСущетсвует возможность только ввода '+', '-' и '*'";
 			}
