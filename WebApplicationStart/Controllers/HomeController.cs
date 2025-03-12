@@ -36,9 +36,9 @@ namespace WebApplicationStart.Controllers
             return "Добрый вечер";
         }
 
-        public double Task2(double a, double b)
+        public string Task2(double a, double b)
         {
-            return a + b;
+            return $"{a} + {b} = {a + b}";
         }
 
         public string Task3(double a, double b, char op = '+')
