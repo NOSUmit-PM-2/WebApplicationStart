@@ -15,6 +15,7 @@ namespace WebApplicationStart.Controllers
 
         public IActionResult Index()
         {
+            //мем смешной но результат важнее
             return View();
         }
 
@@ -26,7 +27,15 @@ namespace WebApplicationStart.Controllers
 
         public string Task1()
         {
-            return "Тут решение первой задачи";
+            string result = "Решение первой задачи";
+            DateTime dateTime = DateTime.Now;
+            if (0 < dateTime.Hour && dateTime.Hour < 6)
+                result += $"\nНочь";
+            else if (6 < dateTime.Hour && dateTime.Hour < 12)
+                result += "\nУтро";
+            else if (12 < dateTime.Hour && dateTime.Hour < 24)
+                result += "\nВечер";
+            return result;
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
