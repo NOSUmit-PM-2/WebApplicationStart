@@ -15,7 +15,6 @@ namespace WebApplicationStart.Controllers
 
         public IActionResult Index()
         {
-            //мем смешной но результат важнее
             return View();
         }
 
