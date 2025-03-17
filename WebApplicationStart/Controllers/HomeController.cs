@@ -44,6 +44,18 @@ namespace WebApplicationStart.Controllers
             return a + " + " + b + " = " + (a + b);
         }
 
+        public string Task3(int a, int b, char operation = '+')
+        {
+            switch (operation)
+            {
+                case '+': return (a + " + " + b + " = " + (a + b));
+                case '-': return (a + " - " + b + " = " + (a - b));
+                case '*': return (a + " * " + b + " = " + (a * b));
+            }
+
+            return "Ошибка: могу выполнять только следующий операции: '+', '-', '*'";
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
