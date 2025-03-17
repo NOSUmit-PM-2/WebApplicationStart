@@ -29,24 +29,14 @@ namespace WebApplicationStart.Controllers
             DateTime time = DateTime.Now;
             string result = "";
 
-            if (time.Hour >= 0 && time.Hour < 6)
-            {
-                result = "Доброй ночи";
-            }
-            else if (time.Hour >= 6 && time.Hour < 12)
-            {
-                result = "Доброе утро";
-            }
-            else if (time.Hour >= 12 && time.Hour < 18)
-            {
-                result = "Добрый день";
-            }
-            else
-            {
-                result = "Добрый вечер";
-            }
+            if (time.Hour < 6)
+                return "Доброй ночи";
+            if (time.Hour < 12)
+                return "Доброе утро";
+            if (time.Hour < 18)
+                return "Добрый день";
 
-            return result;
+            return "Добрый вечер";
         }
 
         public string Task2(int a, int b)
