@@ -40,7 +40,26 @@ namespace WebApplicationStart.Controllers
         {
             return $"{a}+{b}={a + b}";
         }
-        public string Task3(int a,int b,char c)
+        public string Task3(int a, int b, char c)
+        {
+            int result = 0;
+            switch (c)
+            {
+                case '+':
+                    result = a + b;
+                    break;
+                case '-':
+                    result = a - b;
+                    break;
+                case '*':
+                    result = a * b;
+                    break;
+                default:
+                    return "Ошибка: неподдерживаемая операция.";
+            }
+            return $"{a}{c}{b}={result}";
+        }
+        public string Task4(int a,int b,char c)
         {
             int result = 0;
             switch (c)
@@ -56,7 +75,7 @@ namespace WebApplicationStart.Controllers
                     break;
                 case '/':
                     if (b == 0)
-                        return "Дурак!";
+                        return "Stupid";
                     result = a/b;
                     break;
                 default:
