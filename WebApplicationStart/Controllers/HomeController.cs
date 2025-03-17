@@ -38,9 +38,10 @@ namespace WebApplicationStart.Controllers
             //почему-то кажется это неправильным.. после 22 вроде уже ночь. можно поставить вперед это условие, но я не стала, пусть так будет
         }
 
-        public double Task2(double a = 0, double b = 0)
+        public string Task2(double a, double b)
         {
-            return a + b;
+            return $"{a} + {b} = {a + b}";
+            //http://localhost:5090/Home/task2?a=5&b=4  чтобы поиграться
         }
 
         public string Task3(double a, double b, char operation = '+')
