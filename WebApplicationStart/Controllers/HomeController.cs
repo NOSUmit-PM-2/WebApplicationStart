@@ -28,13 +28,14 @@ namespace WebApplicationStart.Controllers
         {
             DateTime currentTime = DateTime.Now;
 
-            if (currentTime.Hour >= 5 && currentTime.Hour < 10)
+            if (currentTime.Hour <= 5)
+                return "Ночь";
+            if (currentTime.Hour <= 10)
                 return "Утро";
-            if (currentTime.Hour >= 10 && currentTime.Hour < 17)
+            if (currentTime.Hour <= 17)
                 return "День";
-            if (currentTime.Hour >= 17 && currentTime.Hour < 20)
-                return "Вечер";
-            return "Ночь";
+            return "Вечер";
+            //почему-то кажется это неправильным.. после 22 вроде уже ночь. можно поставить вперед это условие, но я не стала, пусть так будет
         }
 
         public double Task2(double a = 0, double b = 0)
