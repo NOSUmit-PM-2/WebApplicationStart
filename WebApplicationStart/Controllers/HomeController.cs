@@ -33,7 +33,13 @@ namespace WebApplicationStart.Controllers
             return "Добрый вечер";
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public string calculator(double a, double b)
+        {
+            return $"{a} + {b} = {a + b}";
+            
+        }
+
+            [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

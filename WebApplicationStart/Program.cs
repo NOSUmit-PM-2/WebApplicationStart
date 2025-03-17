@@ -20,4 +20,7 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.MapControllerRoute(
+    name: "calculator",
+    pattern: "{controller=Home}/{action=calculator}/{a?}/{b?}");
 app.Run();
