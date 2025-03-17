@@ -40,6 +40,30 @@ namespace WebApplicationStart.Controllers
         {
             return $"{a}+{b}={a + b}";
         }
+        public string Task3(int a,int b,char c)
+        {
+            int result = 0;
+            switch (c)
+            {
+                case '+':
+                    result = a+b; 
+                    break;
+                case '-':
+                    result = a-b;
+                    break;
+                case '*':
+                    result = a*b;
+                    break;
+                case '/':
+                    if (b == 0)
+                        return "Дурак!";
+                    result = a/b;
+                    break;
+                default:
+                    return "Ошибка: неподдерживаемая операция.";
+            }
+            return $"{a}{c}{b}={result}";
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
