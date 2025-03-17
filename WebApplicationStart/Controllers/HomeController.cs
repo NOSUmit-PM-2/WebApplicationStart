@@ -56,6 +56,21 @@ namespace WebApplicationStart.Controllers
             return "Ошибка: могу выполнять только следующий операции: '+', '-', '*'";
         }
 
+        public string Task4(double a, double b, char operation = '+')
+        {
+            switch (operation)
+            {
+                case '+': return (a + " + " + b + " = " + (a + b));
+                case '-': return (a + " - " + b + " = " + (a - b));
+                case '*': return (a + " * " + b + " = " + (a * b));
+                case '/':
+                    if (b == 0) return "Ошибка: деление на ноль невозможно.";
+                    return (a + " / " + b + " = " + (a / b));
+            }
+
+            return "Ошибка: могу выполнять только следующий операции: '+', '-', '*', '/'";
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
