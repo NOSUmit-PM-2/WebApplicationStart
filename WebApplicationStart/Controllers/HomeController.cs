@@ -33,13 +33,29 @@ namespace WebApplicationStart.Controllers
             return "Добрый вечер";
         }
 
-        public string calculator(double a, double b)
+        public string calculator(double a, double b=0)
         {
             return $"{a} + {b} = {a + b}";
             
         }
 
-            [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public string calculatorpro(double a = 0, double b = 0, char c = '+')
+        {
+
+            switch(c)
+                {
+                case '+': return $"{a} + {b} = {a + b}";
+                case '-': return $"{a} - {b} = {a - b}";
+                case '*': return $"{a} * {b} = {a * b}";
+                default: return "Проверь, верно ли ты все ввел?";
+                }
+            
+
+        }
+
+
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
