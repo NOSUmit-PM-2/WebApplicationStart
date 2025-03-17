@@ -27,4 +27,8 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "calculatorpro",
     pattern: "{controller=Home}/{action=calculatorpro}/{a?}/{b?}/{c?}");
+
+app.MapControllerRoute(
+    name: "calculatorparametrs",
+    pattern: "{controller=Home}/{action=calculatorparametrs}");
 app.Run();

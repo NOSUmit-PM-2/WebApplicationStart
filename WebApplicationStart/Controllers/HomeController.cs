@@ -52,6 +52,20 @@ namespace WebApplicationStart.Controllers
             
 
         }
+        public string calculatorparametrs(double a = 0, double b = 0, char c = '+')
+        {
+
+            switch (c)
+            {
+                case '+': return $"{a} + {b} = {a + b}";
+                case '-': return $"{a} - {b} = {a - b}";
+                case '*': return $"{a} * {b} = {a * b}";
+                case '/': return $"{a} / {b} = {a / b}";
+                default: return "Проверь, верно ли ты все ввел?";
+            }
+
+
+        }
 
 
 
