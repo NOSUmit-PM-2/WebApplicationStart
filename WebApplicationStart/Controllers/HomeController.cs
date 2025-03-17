@@ -48,15 +48,15 @@ namespace WebApplicationStart.Controllers
         {
             switch (operation)
             {
-                case '+': return (a + b).ToString();
-                case '-': return (a - b).ToString();
-                case '*': return (a * b).ToString();
+                case '+': return $"{a} + {b} = {a + b}";
+                case '-': return $"{a} - {b} = {a - b}";
+                case '*': return $"{a} * {b} = {a * b}";
                 case '/':
                     if (b == 0)
                     {
                         return "Ошибка: деление на ноль невозможно.";
                     }
-                    return (a / b).ToString();
+                    return $"{a} / {b} = {a / b}";
                 default:
                     return "Пока что я умею выполнять только эти операции: '+', '-', '*', '/'";
             }
