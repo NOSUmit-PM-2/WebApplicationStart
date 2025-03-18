@@ -17,18 +17,7 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-
-app.MapControllerRoute(
-    name: "calculator",
-    pattern: "{controller=Home}/{action=calculator}/{a?}/{b?}");
-
-app.MapControllerRoute(
     name: "calculatorpro",
-    pattern: "{controller=Home}/{action=calculatorpro}/{a?}/{b?}/{c?}");
+    pattern: "{controller=Home}/{action=index}/{a?}/{b?}/{c?}");
 
-app.MapControllerRoute(
-    name: "calculatorparametrs",
-    pattern: "{controller=Home}/{action=calculatorparametrs}");
 app.Run();

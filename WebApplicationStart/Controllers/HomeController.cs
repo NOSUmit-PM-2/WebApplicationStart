@@ -60,7 +60,7 @@ namespace WebApplicationStart.Controllers
                 case '+': return $"{a} + {b} = {a + b}";
                 case '-': return $"{a} - {b} = {a - b}";
                 case '*': return $"{a} * {b} = {a * b}";
-                case '/': return $"{a} / {b} = {a / b}";
+                case '/': return b == 0 ? $"{a} / {b} = {a / b}" : "А ты уверен, что можно днли ть на 0?" ;
                 default: return "Проверь, верно ли ты все ввел?";
             }
 
