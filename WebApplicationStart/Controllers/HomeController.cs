@@ -24,9 +24,32 @@ namespace WebApplicationStart.Controllers
             return View();
         }
 
+        //Задача 1
         public string Task1()
         {
-            return "Тут решение первой задачи";
+            var Hour = DateTime.Now.Hour;
+
+            if (Hour >= 0 && Hour < 6) return "Ночь";
+            if (Hour >= 6 && Hour < 12) return "Утро";
+            if (Hour >= 12 && Hour < 18) return "День";
+
+            return "Вечер";
+        }
+
+        public string Task2(int a, int b)
+        {
+            return Convert.ToString(a + b);
+        }
+
+        //Здесь решение задач 3 и 4
+        public string Task3_4(int a, int b, string sign)
+        {
+            if (sign == "+") return Convert.ToString(a + b);
+            if (sign == "-") return Convert.ToString(a - b);
+            if (sign == "*") return Convert.ToString(a * b);
+            if (sign == "/") return Convert.ToString(a / b);
+            else return "Ошибочка";
+            
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
