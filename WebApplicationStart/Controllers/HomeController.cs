@@ -42,6 +42,18 @@ namespace WebApplicationStart.Controllers
             return $"{a}+{b}={a + b}";
         }
 
+        public string Task3(double a = 0, double b = 0, char op = '+')
+        {
+            switch (op)
+            {
+                case '+': return $"{a} + {b} = {a + b}";
+                case '-': return $"{a} - {b} = {a - b}";
+                case '*': return $"{a} * {b} = {a * b}";
+                default:
+                    return "Операция недоступна.\nМожно ввести только '+', '-' и '*'";
+            }
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
