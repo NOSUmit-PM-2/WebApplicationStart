@@ -6,18 +6,10 @@ namespace WebApplicationStart.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
         public IActionResult Index()
         {
             return View();
         }
-
 
         public IActionResult Tasks()
         {
@@ -26,13 +18,14 @@ namespace WebApplicationStart.Controllers
 
         public string Task1()
         {
-            return "Тут решение первой задачи";
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            var timeInHour = DateTime.Now.Hour;
+            if (timeInHour < 6)
+                return "Доброй ночи";
+            if (timeInHour < 12)
+                return "Доброе утро";
+            if (timeInHour < 18)
+                return "Добрый день";
+            return "Добрый вечер";
         }
     }
 }
