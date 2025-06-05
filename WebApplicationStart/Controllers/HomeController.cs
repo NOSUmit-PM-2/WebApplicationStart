@@ -1,38 +1,32 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-using WebApplicationStart.Models;
 
-namespace WebApplicationStart.Controllers
+namespace YourNamespace.Controllers
 {
-    public class HomeController : Controller
+    public class StartController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        public IActionResult Hello()
         {
-            _logger = logger;
-        }
+            var currentTime = System.DateTime.Now;
 
-        public IActionResult Index()
-        {
-            return View();
-        }
+            string greeting;
+            if (currentTime.Hour >= 0 && currentTime.Hour < 6)
+            {
+                greeting = "Доброй ночи";
+            }
+            else if (currentTime.Hour >= 6 && currentTime.Hour < 12)
+            {
+                greeting = "Доброе утро";
+            }
+            else if (currentTime.Hour >= 12 && currentTime.Hour < 18)
+            {
+                greeting = "Добрый день";
+            }
+            else
+            {
+                greeting = "Добрый вечер";
+            }
 
-
-        public IActionResult Tasks()
-        {
-            return View();
-        }
-
-        public string Task1()
-        {
-            return "Тут решение первой задачи";
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return Content(greeting);
         }
     }
 }
