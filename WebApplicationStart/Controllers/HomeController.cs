@@ -23,7 +23,6 @@ namespace WebApplicationStart.Controllers
         {
             return View();
         }
-
         public string Task1()
         {
             string timee = "Задача №1 - ";
@@ -37,6 +36,10 @@ namespace WebApplicationStart.Controllers
             else if (18 < dateTime.Hour && dateTime.Hour < 24)
                 timee += "Ночь";
             return timee;
+        }
+        public string Task2(int a, int b)
+        {
+            return $"{a}+{b}={a + b}";
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
