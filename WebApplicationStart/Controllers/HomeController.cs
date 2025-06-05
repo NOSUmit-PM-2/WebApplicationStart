@@ -53,6 +53,18 @@ namespace WebApplicationStart.Controllers
                     return "Операция недоступна.\nМожно ввести только '+', '-' и '*'";
             }
         }
+        public string Task4(double a, double b, char op = '+')
+        {
+            switch (op)
+            {
+                case '+': return $"{a} + {b} = {a + b}";
+                case '-': return $"{a} - {b} = {a - b}";
+                case '*': return $"{a} * {b} = {a * b}";
+                case '/': return b != 0 ? $"{a} / {b} = {a / b}" : "на 0 делить нельзя!";
+                default:
+                    return "Операция недоступна.\nМожно ввести только '+', '-' и '*', '/'";
+            }
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
