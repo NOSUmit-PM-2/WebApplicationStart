@@ -26,17 +26,14 @@ namespace WebApplicationStart.Controllers
 
         public string Task1()
         {
-            string res = "1 задача:";
-            DateTime dateTime = DateTime.Now;
-            if (0 < dateTime.Hour && dateTime.Hour < 6)
-                res += "Ночь";
-            else if (6 < dateTime.Hour && dateTime.Hour < 12)
-                res += "Утро";
-            else if (12 < dateTime.Hour && dateTime.Hour < 18)
-                res += "День";
-            else if (18 < dateTime.Hour && dateTime.Hour < 24)
-                res += "Ночь";
-            return res;
+            var res = DateTime.Now.Hour;
+            if (res < 6)
+                return "Ночь";
+            if (res < 12)
+                return "Утро";
+            if (res < 18)
+                return "День";
+            return "Вечер";
         }
 
         public string Task2(int a, int b)
@@ -47,6 +44,31 @@ namespace WebApplicationStart.Controllers
         public string Task3(int a, int b, char c)
         {
             int res = 0;
+            switch (c)
+            {
+                case '+':
+                    res = a + b;
+                    break;
+                case '-':
+                    res = a - b;
+                    break;
+                case '*':
+                    res = a * b;
+                    break;
+                case '/':
+                    if (b == 0)
+                        return "введите b, не равное 0";
+                    res = a / b;
+                    break;
+                default:
+                    return "Ошибка";
+            }
+            return $"{a}{b}{c}={res}";
+        }
+
+        public string Task4(double a, double b, char c)
+        {
+            double res = 0;
             switch (c)
             {
                 case '+':
