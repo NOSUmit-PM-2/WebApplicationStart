@@ -40,7 +40,7 @@ namespace WebApplicationStart.Controllers
                 case '-': return $"{a} - {b} = {a - b}";
                 case '*': return $"{a} * {b} = {a * b}";
                 default:
-                    return "Данная операция недоступна.\nСущетсвует возможность только ввода '+', '-' и '*'";
+                    return "Сущетсвует возможность только ввода '+', '-' и '*'";
             }
         }
 
