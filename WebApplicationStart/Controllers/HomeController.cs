@@ -50,6 +50,19 @@ namespace WebApplicationStart.Controllers
                 default: return $"В качестве пятого сегмента необходимо передать одну из желаемых операций (+, -, *)";
             }
         }
+
+        public string Task4(double a, double b, string op = "+")
+        {
+            switch (op)
+            {
+                case null:
+                case "+": return $"{a} + {b} = {a + b}";
+                case "-": return $"{a} - {b} = {a - b}";
+                case "*": return $"{a} * {b} = {a * b}";
+                case "/": if (b != 0) return $"{a} / {b} = {a / b}"; else return "Делить на 0 нельзя ";
+                default: return $"В качестве третьего параметра запроса необходимо передать одну из желаемых операций (+, -, *, /)";
+            }
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
