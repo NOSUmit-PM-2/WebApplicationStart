@@ -24,9 +24,28 @@ namespace WebApplicationStart.Controllers
             return View();
         }
 
-        public string Task1()
+        public string Task3(double a = 0, double b = 0, char operation = '+')
         {
-            return "Тут решение первой задачи";
+            //return "Тут решение третьей задачи";
+            string result;
+
+            switch (operation)
+            {
+                case '+':
+                    result = $"{a} + {b} = {a + b}";
+                    break;
+                case '-':
+                    result = $"{a} - {b} = {a - b}";
+                    break;
+                case '*':
+                    result = $"{a} * {b} = {a * b}";
+                    break;
+                default:
+                    result = "Введено неверно";
+                break;
+            }
+
+            return result;
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
