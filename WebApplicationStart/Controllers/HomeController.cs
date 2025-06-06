@@ -40,7 +40,16 @@ namespace WebApplicationStart.Controllers
             return $"{a} + {b} = {a + b}";
         }
 
-
+        public string Task3(double a, double b, string op = "+")
+        {
+            switch (op)
+            {
+                case "+": return $"{a} + {b} = {a + b}";
+                case "-": return $"{a} - {b} = {a - b}";
+                case "*": return $"{a} * {b} = {a * b}";
+                default: return $"В качестве пятого сегмента необходимо передать одну из желаемых операций (+, -, *)";
+            }
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
