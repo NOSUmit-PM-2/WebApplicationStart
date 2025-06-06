@@ -24,9 +24,34 @@ namespace WebApplicationStart.Controllers
             return View();
         }
 
-        public string Task1()
+        public string Task4(double a = 0, double b = 0, char operation = '+')
         {
-            return "Тут решение первой задачи";
+           // return "Тут решение четвертой задачи";
+            string result;
+
+            switch (operation)
+            {
+                case '+':
+                    result = $"{a} + {b} = {a + b}";
+                    break;
+                case '-':
+                    result = $"{a} - {b} = {a - b}";
+                    break;
+                case '*':
+                    result = $"{a} * {b} = {a * b}";
+                    break;
+                case '/':
+                    if (b != 0)
+                        result = $"{a} / {b} = {a / b}";
+                    else
+                        result = "Ошибка: деление на ноль!";
+                    break;
+                default:
+                    result = "Проверь, верно ли ты все ввел?";
+                    break;
+            }
+
+            return result;
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
