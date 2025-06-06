@@ -29,6 +29,11 @@ namespace WebApplicationStart.Controllers
             return "Тут решение первой задачи";
         }
 
+        public string Task2(double a = 0, double b = 0)
+        {
+            return $"{a} + {b} = {a + b}";
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
