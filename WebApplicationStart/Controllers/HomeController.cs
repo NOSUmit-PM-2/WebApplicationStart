@@ -28,6 +28,17 @@ namespace WebApplicationStart.Controllers
         {
             return a + b;
         }
+        public string Task3(double a, double b, char op = '+')
+        {
+            switch (op)
+            {
+                case '+': return (a + b).ToString();
+                case '-': return (a - b).ToString();
+                case '*': return (a * b).ToString();
+                default:
+                    return "Данная операция недоступна.\nСущетсвует возможность только ввода '+', '-' и '*'";
+            }
+        }
 
         public string Task1()
         {            
