@@ -4,7 +4,7 @@ using WebApplicationStart.Models;
 
 namespace WebApplicationStart.Controllers
 {
-    //
+    
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -28,6 +28,23 @@ namespace WebApplicationStart.Controllers
         public string Task1()
         {
             return "Тут решение первой задачи";
+            int hour = DateTime.Now.Hour;
+            if (hour >= 18)
+            {
+                return "Вечер";
+            }
+            else if (hour >= 12)
+            {
+                return "День";
+            }
+            else if (hour >= 6)
+            {
+                return "Утро";
+            }
+            else
+            {
+                return "Ночь";
+            }
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
