@@ -24,6 +24,11 @@ namespace WebApplicationStart.Controllers
             return View();
         }
 
+        public double Task2(double a = 0, double b = 0)
+        {
+            return a + b;
+        }
+
         public string Task1()
         {            
         var timeInHour = DateTime.Now.Hour;
