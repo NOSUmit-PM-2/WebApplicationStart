@@ -24,9 +24,10 @@ namespace WebApplicationStart.Controllers
             return View();
         }
 
-        public string Task1()
+        public string Task2(double a, double b)
         {
-            return "Тут решение первой задачи";
+           // return "Тут решение второй задачи";
+            return $"{a} + {b} = {a + b}";
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
