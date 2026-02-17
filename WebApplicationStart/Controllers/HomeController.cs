@@ -24,15 +24,9 @@ namespace WebApplicationStart.Controllers
             return View();
         }
 
-        public string Task1()
+        public RedirectResult Task1()
         {
-            return "Тут решение первой задачи";
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return Redirect("/start/index");
         }
     }
 }
