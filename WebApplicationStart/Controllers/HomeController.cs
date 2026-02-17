@@ -47,6 +47,16 @@ namespace WebApplicationStart.Controllers
 
 
         }
+        public string Task3(int num1 = 0, int num2 = 0, string op = "+")
+        {
+            switch(op)
+            {
+                case "+": return $"{num1} + {num2} = {num1 + num2}";
+                case "-": return $"{num1} - {num2} = {num1 - num2}";
+                case "*": return $"{num1} * {num2} = {num1 * num2}";
+                default: return $"Введите корректную операцию(+,-,*)";
+            }
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
