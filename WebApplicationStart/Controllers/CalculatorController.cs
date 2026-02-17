@@ -4,23 +4,25 @@ namespace WebApplicationStart.Controllers
 {
     public class CalculatorController : Controller
     {
-        public IActionResult Index(int a, int b, char operation)
+        public IActionResult Index(double a, double b, string operation)
         {
-            if (operation != 0 && !"!=-*".Contains(operation))
-                throw new Exception("Invalid operation");
-
             string result;
 
             switch (operation)
             {
-                case '+':
+                case "%2B":
                     result = $"{a} + {b} = {a + b}";
                     break;
-                case '-':
+                case "-":
                     result = $"{a} - {b} = {a - b}";
                     break;
-                case '*':
+                case "*":
                     result = $"{a} * {b} = {a * b}";
+                    break;
+                case "/":
+                    if (b == 0)
+                        throw new Exception("Zero divide exception");
+                    result = $"{a} / {b} = {a / b}";
                     break;
                 default:
                     result = $"{a} + {b} = {a + b}";
