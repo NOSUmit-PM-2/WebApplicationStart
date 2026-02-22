@@ -5,9 +5,15 @@ namespace WebApplicationStart.Controllers
 {
     public class CalculatorController : Controller
     {
-        public string Index(double a, double b)
+        public string Index(double a, double b, string op)
         {
-            return $"{a} + {b} = {a+b}";
+            switch (op)
+            { 
+                case "-": return $"{a} - {b} = {a - b}";
+                case "*": return $"{a} * {b} = {a * b}";
+            }
+            if (op!=null && op!="+") return "Скорректируйте запрос";
+            return $"{a} + {b} = {a + b}";
         }
 
     }
