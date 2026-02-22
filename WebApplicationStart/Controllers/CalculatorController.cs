@@ -5,15 +5,15 @@ namespace WebApplicationStart.Controllers
 {
     public class CalculatorController : Controller
     {
-        public string Index(double a, double b, string op)
+        public string Index(double a, double b, string c)
         {
-            switch (op)
-            { 
-                case "-": return $"{a} - {b} = {a - b}";
-                case "*": return $"{a} * {b} = {a * b}";
-            }
-            if (op!=null && op!="+") return "Скорректируйте запрос";
-            return $"{a} + {b} = {a + b}";
+           
+           if (c=="-") return $"{a} - {b} = {a - b}";
+           if (c== "*") return $"{a} * {b} = {a * b}";
+           if (c=="/" && b!=0) return $"{a} / {b} = {a / b}";
+
+           if (c!=null && c != "+") return "Скорректируйте запрос";
+           return $"{a} + {b} = {a + b}";
         }
 
     }
