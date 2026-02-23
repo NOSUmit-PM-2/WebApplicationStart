@@ -28,7 +28,28 @@ namespace WebApplicationStart.Controllers
         {
             return "Тут решение первой задачи";
         }
-
+         
+        public string Task3(int num1 = 0, int num2 = 0, string op = "+")
+        {
+            var res = 0;
+            if (op == "+")
+            {
+                res = num1 + num2;
+            }
+            else if (op == "-")
+            {
+                res = num1 - num2;
+            }
+            else if (op == "*")
+            {
+                res = num1 * num2;
+            }
+            else
+            {
+                return "Операция не поддерживается";
+            }
+            return $"{num1} {op} {num2} = {res}";
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
