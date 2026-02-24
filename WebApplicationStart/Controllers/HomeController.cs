@@ -37,6 +37,11 @@ namespace WebApplicationStart.Controllers
                 return "Добрый вечер";
         }
 
+        public string Task2(int a, int b)
+        {
+            return $"{a + b}";
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
