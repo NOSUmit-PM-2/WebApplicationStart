@@ -26,7 +26,20 @@ namespace WebApplicationStart.Controllers
 
         public string Task1()
         {
-            return "Тут решение первой задачи";
+            int hours = DateTime.Now.Hour;
+            if (hours < 6)
+                return "Доброй ночи";
+            if (hours < 12)
+                return "Доброе утро";
+            if (hours < 18)
+                return "Добрый день";
+            else
+                return "Добрый вечер";
+        }
+
+        public string Task2(int a, int b)
+        {
+            return $"{a + b}";
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
