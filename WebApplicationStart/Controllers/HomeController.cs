@@ -45,6 +45,17 @@ namespace WebApplicationStart.Controllers
                 _ => "Ошибочная операция"
             } ;
         }
+        public string Task4(double a, double b, string c="+")
+        {
+            return c switch
+            {
+                "+" => (a + b).ToString(),
+                "*" => (a * b).ToString(),
+                "-" => (a - b).ToString(),
+                "/" => b==0? "На ноль делить нельзя":(a/b).ToString(),
+                _ => "Ошибочная операция"
+            } ;
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
