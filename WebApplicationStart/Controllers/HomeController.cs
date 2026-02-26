@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Diagnostics;
 using WebApplicationStart.Models;
 
@@ -46,6 +47,21 @@ namespace WebApplicationStart.Controllers
         public string Task2(int n1 = 0, int n2 = 0)
         {
             return $"{n1} + {n2} = {n1 + n2}";
+        }
+
+        [Route("calculator/index/{n1?}/{n2?}/{oper?}")]
+        public string Task3(double n1 = 0, double n2 = 0, string oper = "+")
+        {
+            double res = 0;
+            switch (oper)
+            {
+                case "+": res = n1 + n2; break;
+                case "-": res = n1 - n2; break;
+                case "*": res = n1 * n2; break;
+                case "/": res = n1 / n2; break;
+                default: return "Ошибка: Некорректная операция. Допустимые операции: +, -, *\rПример корректного запроса: https://localhost:7299/calculator/index/1/3/+";
+            }
+            return $"{n1} {oper} {n2} = {res}";
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
