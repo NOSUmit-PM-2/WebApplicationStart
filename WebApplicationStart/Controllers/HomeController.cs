@@ -64,6 +64,24 @@ namespace WebApplicationStart.Controllers
             return $"{n1} {oper} {n2} = {res}";
         }
 
+        [Route("calc/index")]
+        public string Task4(double a = 0, double b = 0, string c = "+")
+        {
+            c = System.Net.WebUtility.UrlDecode(c);
+            double res = 0;
+            switch (c)
+            {
+                case "+": res = a + b; break;
+                case "-": res = a - b; break;
+                case "*": res = a * b; break;
+                case "/": if (b == 0) return "Ошибка: Деление на ноль невозможно"; res = a / b; break;
+                default: return "Ошибка: Некорректная операция. Допустимые операции: +, -, *, /\rПример: https://localhost:5001/calc/index?a=1&b=3&c=+";
+            }
+            return $"{a} {c} {b} = {res}";
+        }
+
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
