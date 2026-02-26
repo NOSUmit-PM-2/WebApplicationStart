@@ -42,6 +42,12 @@ namespace WebApplicationStart.Controllers
             return "Добрый вечер";
         }
 
+        [Route("calculator/index/{n1?}/{n2?}")]
+        public string Task2(int n1 = 0, int n2 = 0)
+        {
+            return $"{n1} + {n2} = {n1 + n2}";
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
