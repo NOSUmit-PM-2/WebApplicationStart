@@ -5,16 +5,23 @@ namespace WebApplicationStart.Controllers
     public class CalculateController : Controller
     {
         
-        public string Task3(double n1, double n2, string operation = "+")
+        public string Task3(double a, double b, string c)
         {
-            switch (operation)
+
+            switch (c)
             {
-                case "+": return $"{n1} + {n2} = {n1 + n2}";
-                case "*": return $"{n1} * {n2} = {n1 * n2}";               
-                case "-": return $"{n1} - {n2} = {n1 - n2}";
-                default: return $"Ошибка: Некорректная операция. Допустимые операции: +, -, *";
+                case "%2B": return $"{a} + {b} = {a + b}";
+                case "*": return $"{a} * {b} = {a * b}";               
+                case "-": return $"{a} - {b} = {a - b}";
+                case "/":
+                    if (b == 0)
+                        return "На ноль делить нельзя";
+                    return $"{a} / {b} = {a / b}";
+                default: return $"{a} + {b} = {a + b}";
             }
 
         }
+
+        
     }
 }
