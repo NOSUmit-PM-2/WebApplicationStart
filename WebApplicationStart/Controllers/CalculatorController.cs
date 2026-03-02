@@ -12,9 +12,15 @@ namespace WebApplicationStart.Controllers
         {
             _logger = logger;
         }
-        public string Index(int first, int second)
+        public string Index(int first, int second,string sign)
         {
-            return $"{first} + {second} = {first + second}";
+            switch (sign)
+            {
+                case "+": return $"{first} + {second} = {first + second}";
+                case "-": return $"{first} - {second} = {first - second}";
+                case "*": return $"{first} * {second} = {first * second}";
+                default:return "неверный знак, попробуйте снова";
+            }
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
