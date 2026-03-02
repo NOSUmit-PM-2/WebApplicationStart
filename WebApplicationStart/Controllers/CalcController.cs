@@ -4,21 +4,24 @@ using WebApplicationStart.Models;
 
 namespace WebApplicationStart.Controllers
 {
-    public class CalculatorController : Controller
+    public class CalcController : Controller
     {
         private readonly ILogger<HomeController> _logger;
 
-        public CalculatorController(ILogger<HomeController> logger)
+        public CalcController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
-        public string Index(int first, int second, string sign)
+        public string Index(double a = 0, double b = 0, string c = "+")
         {
-            switch (sign)
+            if (b == 0 && c == "/")
+                return "На ноль делить нельзя!";
+            switch (c)
             {
-                case "+": return $"{first} + {second} = {first + second}";
-                case "-": return $"{first} - {second} = {first - second}";
-                case "*": return $"{first} * {second} = {first * second}";
+                case "+": return $"{a} + {b} = {a + b}";
+                case "-": return $"{a} - {b} = {a - b}";
+                case "*": return $"{a} * {b} = {a * b}";
+                case "/": return $"{a} / {b} = {a / b}";
                 default: return "неверный знак, попробуйте снова";
             }
         }
