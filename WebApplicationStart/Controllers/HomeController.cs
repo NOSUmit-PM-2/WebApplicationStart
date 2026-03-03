@@ -41,12 +41,6 @@ namespace WebApplicationStart.Controllers
 
 
         }
-        public string Task2(int num1 = 0, int num2 = 0)
-        {
-            return $"{num1} + {num2} = {num1 + num2}" ;
-
-
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
