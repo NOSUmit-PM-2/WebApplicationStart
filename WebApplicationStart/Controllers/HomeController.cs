@@ -24,18 +24,7 @@ namespace WebApplicationStart.Controllers
             return View();
         }
 
-        public string Task1()
-        {
-            int hours = DateTime.Now.Hour;
-            if (hours < 6)
-                return "Доброй ночи";
-            if (hours < 12)
-                return "Доброе утро";
-            if (hours < 18)
-                return "Добрый день";
-            else
-                return "Добрый вечер";
-        }
+       
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
