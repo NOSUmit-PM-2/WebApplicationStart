@@ -11,6 +11,7 @@ namespace WebApplicationStart.Controllers
                 '+' => (a + b).ToString(),
                 '*' => (a * b).ToString(),
                 '-' => (a - b).ToString(),
+                '/' => b == 0 ? "На ноль делить нельзя" : (a / b).ToString(),
                 _ => "Ошибочная операция"
             };
         }
