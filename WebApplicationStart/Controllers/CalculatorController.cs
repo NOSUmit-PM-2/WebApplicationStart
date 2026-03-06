@@ -5,15 +5,21 @@ namespace WebApplicationStart.Controllers
 {
     public class CalculatorController : Controller
     {
-        public string Index(double a, double b, string c)
+        public string Index(double a=0, double b=0, string c="+")
         {
-           
-           if (c=="-") return $"{a} - {b} = {a - b}";
-           if (c== "*") return $"{a} * {b} = {a * b}";
-           if (c=="/" && b!=0) return $"{a} / {b} = {a / b}";
+           switch(c)
+            {
+                case "+": return $"{a} + {b} = {a + b}";
+                case "-": return $"{a} - {b} = {a - b}";
+                case "*": return $"{a} * {b} = {a * b}";
+                case "/": 
+                    if (b != 0) return $"{a} / {b} = {a / b}";
+                    else return "На ноль делить нельзя, задайте новое значение второго параметра!";
 
-           if (c!=null && c != "+") return "Скорректируйте запрос";
-           return $"{a} + {b} = {a + b}";
+                default: return "Недопустимая операция! Скорректируйте запрос с допустимыми вариантами символов: %2B; -; *; /;";
+
+            }
+           
         }
 
     }
