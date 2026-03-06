@@ -5,7 +5,7 @@ namespace WebApplicationStart.Controllers
 {
     public class CalculatorController : Controller
     {
-        public string Index(double a, double b)
+        public string Index(double a=0, double b=0)
         {
             return $"{a} + {b} = {a+b}";
         }
