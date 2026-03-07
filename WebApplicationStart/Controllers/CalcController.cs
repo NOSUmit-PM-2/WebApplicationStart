@@ -6,39 +6,32 @@ namespace WebApplicationStart.Controllers
     public class CalcController : Controller
     {
         // GET: HomeCalculator
-        public string Index(double a, double b, string c) //значения по умолчанию для параметров метода указывать необязательно)
+        public string Index(double a = 0, double b = 0, string c = "+")
         {
             if (c == "-")
             {
                 return (a - b).ToString();
             }
-            else if (c == "%2B")
+            else if (c == "+")
             {
-                return (a * b).ToString();
+                return (a + b).ToString();
             }
             else if (c == "/")
             {
-                if (b != 0)
-                {
-                    return (a / (double)b).ToString();
-                }
-                else
+                if (b == 0)
                 {
                     return "На ноль делить нельзя!";
+                    
                 }
+                return (a / (double)b).ToString();
             }
             else if (c == "*")
             {
                 return (a * b).ToString();
             }
-            else
-            {
-                if (c == null)
-                {
-                    return (a + b).ToString();
-                }
-                return "Скорректируйте запрос!";
-            }
+
+            return "Скорректируйте запрос!";
+
         }
 
         // GET: HomeCalculator/Details/5
