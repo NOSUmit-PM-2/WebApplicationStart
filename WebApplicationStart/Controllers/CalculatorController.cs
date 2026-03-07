@@ -6,9 +6,24 @@ namespace WebApplicationStart.Controllers
     public class CalculatorController : Controller
     {
         // GET: HomeCalculator
-        public int Index(int a = 0, int b = 0)//значения по умолчанию для параметров метода указывать необязательно)
+        public string Index(double a, double b, string operation) //значения по умолчанию для параметров метода указывать необязательно)
         {
-            return a + b;
+            if (operation == "+")
+            {
+                return (a + b).ToString();
+            }
+            else if (operation == "-")
+            {
+                return (a - b).ToString();
+            }
+            else if (operation == "*")
+            {
+                return (a * b).ToString();
+            }
+            else
+            {
+                return "Скорректируйте свой запрос!";
+            }
         }
 
         // GET: HomeCalculator/Details/5

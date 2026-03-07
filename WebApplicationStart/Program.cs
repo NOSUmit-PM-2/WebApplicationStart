@@ -20,6 +20,6 @@ app.UseHttpsRedirection();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{a?}/{b?}");
+    pattern: "{controller=Home}/{action=Index}/{a?}/{b?}/{operation?}");
 
 app.Run();
