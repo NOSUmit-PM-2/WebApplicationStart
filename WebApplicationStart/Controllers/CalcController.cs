@@ -3,26 +3,41 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplicationStart.Controllers
 {
-    public class CalculatorController : Controller
+    public class CalcController : Controller
     {
         // GET: HomeCalculator
-        public string Index(double a, double b, string operation) //значения по умолчанию для параметров метода указывать необязательно)
+        public string Index(double a, double b, string c) //значения по умолчанию для параметров метода указывать необязательно)
         {
-            if (operation == "+")
-            {
-                return (a + b).ToString();
-            }
-            else if (operation == "-")
+            if (c == "-")
             {
                 return (a - b).ToString();
             }
-            else if (operation == "*")
+            else if (c == "%2B")
+            {
+                return (a * b).ToString();
+            }
+            else if (c == "/")
+            {
+                if (b != 0)
+                {
+                    return (a / (double)b).ToString();
+                }
+                else
+                {
+                    return "На ноль делить нельзя!";
+                }
+            }
+            else if (c == "*")
             {
                 return (a * b).ToString();
             }
             else
             {
-                return "Скорректируйте свой запрос!";
+                if (c == null)
+                {
+                    return (a + b).ToString();
+                }
+                return "Скорректируйте запрос!";
             }
         }
 
