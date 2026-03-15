@@ -2,7 +2,7 @@
 
 namespace WebApplicationStart.Controllers
 {
-    public class Calculator : Controller
+    public class CalculatorController : Controller
     {
         public string Index(double a = 0, double b = 0)
         {
