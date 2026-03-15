@@ -8,31 +8,27 @@ namespace WebApplicationStart.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
+		public string Hello()
+		{
+			int hour = DateTime.Now.Hour;
+			if (hour < 6)
+			{
+				return "Доброй ночи";
+			}
 
-        public IActionResult Index()
-        {
-            return View();
-        }
+			if (hour < 12)
+			{
+				return "Доброе утро";
+			}
+			if (hour < 18)
+			{
+				return "Добрый день";
+			}
+			else
+			{
+				return "Добрый вечер";
+			}
 
-
-        public IActionResult Tasks()
-        {
-            return View();
-        }
-
-        public string Task1()
-        {
-            return "Тут решение первой задачи";
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-    }
+		}
+	}
 }
