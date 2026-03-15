@@ -4,11 +4,11 @@ using WebApplicationStart.Models;
 
 namespace WebApplicationStart.Controllers
 {
-    public class StartController : Controller
+    public class CalculatorController : Controller
     {
         private readonly ILogger<HomeController> _logger;
 
-		public string Task2(int a, int b)
+		public string Index(int a, int b)
         {
 			return $"{a} + {b} = {a + b}";
 		}
