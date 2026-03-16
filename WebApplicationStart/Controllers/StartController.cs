@@ -6,6 +6,27 @@ namespace WebApplicationStart.Controllers
 {
     public class StartController : Controller
     {
-       
-    }
+		public string Index()
+		{
+			int hour = DateTime.Now.Hour;
+			if (hour < 6)
+			{
+				return "Доброй ночи";
+			}
+
+			if (hour < 12)
+			{
+				return "Доброе утро";
+			}
+			if (hour < 18)
+			{
+				return "Добрый день";
+			}
+			else
+			{
+				return "Добрый вечер";
+			}
+
+		}
+	}
 }
