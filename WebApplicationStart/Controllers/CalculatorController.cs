@@ -8,7 +8,7 @@ namespace WebApplicationStart.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-		public string Index(int a, int b)
+		public string Index(int a = 0, int b = 0)
         {
 			return $"{a} + {b} = {a + b}";
 		}
