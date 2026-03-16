@@ -14,16 +14,21 @@ namespace WebApplicationStart.Controllers
         }
         public string Index(double a = 0, double b = 0, string c = "+")
         {
-            if (b == 0 && c == "/")
-                return "На ноль делить нельзя!";
-            switch (c)
+            if (c == "+")
+                return $"{a} + {b} = {a + b}";
+            else if (c == "-")
+                return $"{a} - {b} = {a - b}";
+            else if (c == "*")
+                return $"{a} * {b} = {a * b}";
+            else if (c == "/")
             {
-                case "+": return $"{a} + {b} = {a + b}";
-                case "-": return $"{a} - {b} = {a - b}";
-                case "*": return $"{a} * {b} = {a * b}";
-                case "/": return $"{a} / {b} = {a / b}";
-                default: return "неверный знак, попробуйте снова";
+                if (b == 0)
+                    return "На ноль делить нельзя!";
+                else
+                    return $"{a} / {b} = {a / b}";
             }
+            else
+                return "неверный знак, попробуйте снова";
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
