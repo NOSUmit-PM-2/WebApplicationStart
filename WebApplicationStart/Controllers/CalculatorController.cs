@@ -4,7 +4,7 @@ namespace WebApplicationStart.Controllers
 {
     public class CalculatorController : Controller
     {
-        public string Index(double num1, double num2, string operation)
+        public string Index(double num1=0, double num2 = 0, string operation="+")
         {
             switch (operation)
             {
