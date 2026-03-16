@@ -4,26 +4,18 @@ namespace WebApplicationStart.Controllers
 {
     public class CalculatorController : Controller
     {
-        public string Index(double a, double b, string operation)
+        public string Index(double a = 0, double b = 0, string operation = "+")
         {
-            double result;
             switch (operation)
             {
                 case "+":
-                    result = a + b;
-                    break;
+                    return $"{a} + {b} = {a + b}";
                 case "-":
-                    result = a - b;
-                    break;
+                    return $"{a} - {b} = {a - b}";
                 case "*":
-                    result = a * b;
-                    break;
-                default:
-                    operation = "+";
-                    result = a + b;
-                    break;
+                    return $"{a} * {b} = {a * b}";
             }
-            return $"{a} {operation} {b} = {result}";
+            return "";
         }
     }
 }
