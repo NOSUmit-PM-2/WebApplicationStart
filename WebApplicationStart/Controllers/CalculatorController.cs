@@ -12,7 +12,7 @@ namespace WebApplicationStart.Controllers
         {
             _logger = logger;
         }
-        public string Index(int first, int second)
+        public string Index(int first = 0, int second = 0)
         {
             return $"{first} + {second} = {first + second}";
         }
