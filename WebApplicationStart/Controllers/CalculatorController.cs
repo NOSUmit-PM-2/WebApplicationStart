@@ -2,21 +2,26 @@
 
 namespace WebApplicationStart.Controllers
 {
-    public class CalculatorController : Controller
+    public class CalcController : Controller
     {
-        public IActionResult Index(double a, double b, string operation)
+        public IActionResult Index(double a, double b, string c = "+")
         {
-            double c = 0;
-            switch (operation)
+            double result = 0;
+            switch (c)
             {
-                case "+": c = a + b; break;
-                case "-": c = a - b; break;
-                case "*": c = a * b; break;
-                case null: c = a + b; operation = "+"; break;
+                case "+": result = a + b; break;
+                case "-": result = a - b; break;
+                case "*": result = a * b; break;
+                case "/":
+                    {
+                        if (b == 0) return Content("b не может быть равен нулю");
+                        result = a / b;
+                        break;
+                    }
                 default:
                     return Content("Неправильно указана операция");
             }
-            return Content($"{a} {operation} {b} = {c}");
+            return Content($"{a} {c} {b} = {result}");   
         }
     }
 }
